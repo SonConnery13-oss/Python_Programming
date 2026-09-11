@@ -26,27 +26,47 @@ if "phone" in d:
     print(d["phone"])
 
 print(d.get("phone"))
+print(d.get("phone", "전화없음"))
 
 # ===========================================================
 # 1. 딕셔너리는 mutable하다. (변경 가능)
 # ===========================================================
 
+d["age"] += 1
+print(d)
 
+d["phone"] = "123-4567"
+print(d)
 
+del d["phone"]
+print(d)
+
+print(d.pop("age"))
+print(d)
 
 # ===========================================================
 # 2. 딕셔너리는 iterable하다. (반복 가능)
 # ===========================================================
 
 # 딕셔너리 순회
+for key in d:
+    print(key, d[key])
 
+for i, data in enumerate(d):
+    print(i, data)
 
+for value in d.values():
+    print(value)
+
+for key, value in d.items():
+    print(key, value)
 
 # ===========================================================
 # 3. 딕셔너리는 sequence 객체가 아니다. (인덱싱, 슬라이싱 불가)
 # ===========================================================
 
-
+d[0] = "python"
+print(d)
 
 
 # ===========================================================
@@ -55,13 +75,23 @@ print(d.get("phone"))
 
 d = {"kor": 90, "mat": 85, "eng": 80}
 
+d["kor"] = 100
+print(d)
 
+d['sci'] = 80
+print(d)
+
+d[(1, 2)] = 100
+print(d)
 
 # 키로 가능한 것 : immutable 타입 (숫자형, 불리언, 문자열, 튜플) -> hashable type
 # 키로 안되는 것 : mutable 타입 (리스트, 딕셔너리, 집합) -> unhashable type
 # 키는 해시 가능(hashable) + 프로그램 실행 동안 hash값이 변하지 않아야 함
 
-
+print(hash(12345))
+print(hash("python"))
+print(hash((1,2)))
+# print(hash([1, 2]))
 
 # 딕셔너리가 저장되는 방식
 # 1. 딕셔너리 데이터를 저장하기 위한 해시 테이블을 생성함
