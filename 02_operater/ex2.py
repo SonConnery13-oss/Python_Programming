@@ -13,6 +13,7 @@ print(~a)       # 1111 1010
 print("a" in "apple")
 print(3 in [1, 2, 3])
 
+
 # 삼항 연산자
 # int max = a > b ? a : b;
 max = a if a > b else b
