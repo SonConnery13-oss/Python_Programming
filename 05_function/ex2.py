@@ -123,8 +123,12 @@ print(is_even(7))                           # ✅ False
 
 # 2️⃣ 가변 인자로 여러 숫자를 받아 (최소값, 최대값, 합계, 평균) 튜플 리턴하기
 
-def num_info(*num):
-    return (min(num), max(num), sum(num), sum(num)/5)
+# def num_info(*num):
+#     return (min(num), max(num), sum(num), sum(num)/5)
+
+def num_info(*args):
+    tot = sum(args)
+    return min(args), max(args), tot, tot / len(args)
 
 print(num_info(4, 8, 1, 9, 3))              # ✅ (1, 9, 25, 5.0)
 
